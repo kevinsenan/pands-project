@@ -6,5 +6,6 @@ import pandas as pd
 
 # read in the data from the iris.data file as a csv file as that is how the data is presented and assign it to a datafile named df.
 df = pd.read_csv('iris.data')
+#test print to be removed
 print(df)
 
