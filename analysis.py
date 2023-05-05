@@ -13,7 +13,7 @@ filename = 'iris.data'
 # of data isn't ignored as a header.
 df = pd.read_csv(filename, header=None)
 #As the dataset had no column headers, I have to insert them into the dataset. 
-# I am using 0 to 4 for the numerical columns to make it easier for me but I am 
+# I am using 0 to 3 for the numerical columns to make it easier for me.
 df.set_axis([0, 1, 2, 3, "Iris"], axis=1,inplace=True)
 # saving the list of correct column names in a list called headers. 
 headers = ["sepal length", "sepal width", "petal length", "petal width"]
@@ -23,4 +23,9 @@ print(df.describe())
 #I can now plot a histogram of all the values adding labels using the headers list
 plt.hist([df[0], df[1], df[2], df[3]], label=[headers[0], headers[1], headers[2], headers[3]])
 plt.legend()
-plt.show()         
+plt.show()
+#plot a scatter plot
+colour = {'Iris-setosa':'red', 'Iris-virginica':'green', 'Iris-versicolor':'blue'}
+plt.scatter(df[2], df[3], c=df['Iris'].map(colour))
+plt.show()
+        
