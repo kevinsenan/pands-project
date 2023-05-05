@@ -14,3 +14,6 @@ print(df)
 # To get an idea of the data, we use the command describe 
 # to show the statistical information using print.
 print(df.describe())
+#The data set does not have column names so I need to add them using the following command
+df.set_axis(["sepal length", "seal width", "petal length", "petal width", "name"], axis=1,inplace=True)
+                    
