@@ -28,4 +28,6 @@ plt.show()
 colour = {'Iris-setosa':'red', 'Iris-virginica':'green', 'Iris-versicolor':'blue'}
 plt.scatter(df[2], df[3], c=df['Iris'].map(colour))
 plt.show()
+plt.xlabel(headers[2])
+plt.ylabel(headers[3])
         
