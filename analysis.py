@@ -24,10 +24,13 @@ print(df.describe())
 plt.hist([df[0], df[1], df[2], df[3]], label=[headers[0], headers[1], headers[2], headers[3]])
 plt.legend()
 plt.show()
-#plot a scatter plot
+#plot a scatter plots for the sepals and petals
 colour = {'Iris-setosa':'red', 'Iris-virginica':'green', 'Iris-versicolor':'blue'}
-plt.scatter(df[2], df[3], c=df['Iris'].map(colour))
+plt.scatter(df[0], df[1], c=df['Iris'].map(colour))
+plt.xlabel(headers[0])
+plt.ylabel(headers[1])
 plt.show()
+plt.scatter(df[2], df[3], c=df['Iris'].map(colour))
 plt.xlabel(headers[2])
 plt.ylabel(headers[3])
-        
+plt.show()
