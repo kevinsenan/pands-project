@@ -29,8 +29,33 @@ colour = {'Iris-setosa':'red', 'Iris-virginica':'green', 'Iris-versicolor':'blue
 plt.scatter(df[0], df[1], c=df['Iris'].map(colour))
 plt.xlabel(headers[0])
 plt.ylabel(headers[1])
+plt.title('Scatter Plot for Fishers Iris Data set showing sepal length and width')
 plt.show()
 plt.scatter(df[2], df[3], c=df['Iris'].map(colour))
 plt.xlabel(headers[2])
 plt.ylabel(headers[3])
+plt.title('Scatter Plot for Fishers Iris Data set showing petal length and width')
+plt.show()
+#show data correlation
+print(df.corr())
+#show boxplots of data to show the range of data for each of the attributes of all the flowers
+plt.boxplot([df[0], df[1], df[2], df[3]])
+plt.show()
+#show boxplots of data to show the range of data for each of the attributes of each flower separately
+df.boxplot(column=[0], by=['Iris'])
+plt.show()
+#
+fig, ax = plt.subplots(2, 2, figsize=(8, 6))
+A = [df[0][df.Iris == 'Iris-setosa'], df[0][df.Iris == 'Iris-virginaca'], df[0][df.Iris == 'Iris-versicolor']]
+B = [df[1][df.Iris == 'Iris-setosa'], df[1][df.Iris == 'Iris-virginaca'], df[1][df.Iris == 'Iris-versicolor']]
+C = [df[2][df.Iris == 'Iris-setosa'], df[2][df.Iris == 'Iris-virginaca'], df[2][df.Iris == 'Iris-versicolor']]
+D = [df[3][df.Iris == 'Iris-setosa'], df[3][df.Iris == 'Iris-virginaca'], df[3][df.Iris == 'Iris-versicolor']]
+ax[0, 0].boxplot(A, widths = 0.7)
+ax[0, 0].set_title(headers[0])
+ax[0, 1].boxplot(B, widths = 0.7)
+ax[0, 1].set_title(headers[1])
+ax[1, 0].boxplot(C, widths = 0.7)
+ax[1, 0].set_title(headers[2])
+ax[1, 1].boxplot(D, widths = 0.7)
+ax[1, 1].set_title(headers[3])
 plt.show()
