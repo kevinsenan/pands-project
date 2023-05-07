@@ -59,3 +59,28 @@ ax[1, 0].set_title(headers[2])
 ax[1, 1].boxplot(D, widths = 0.7)
 ax[1, 1].set_title(headers[3])
 plt.show()
+# trying to show all the boxplots on one graph
+def set_colour(bp):
+    plt.setp(bp['boxes'][0], color='blue')
+    plt.setp(bp['boxes'][1], color='red')
+    plt.setp(bp['boxes'][2], color='green')
+
+A = [df[0][df.Iris == 'Iris-setosa'], df[0][df.Iris == 'Iris-virginaca'], df[0][df.Iris == 'Iris-versicolor']]
+B = [df[1][df.Iris == 'Iris-setosa'], df[1][df.Iris == 'Iris-virginaca'], df[1][df.Iris == 'Iris-versicolor']]
+C = [df[2][df.Iris == 'Iris-setosa'], df[2][df.Iris == 'Iris-virginaca'], df[2][df.Iris == 'Iris-versicolor']]
+D = [df[3][df.Iris == 'Iris-setosa'], df[3][df.Iris == 'Iris-virginaca'], df[3][df.Iris == 'Iris-versicolor']]
+
+bp = plt.boxplot(A, 0, '', positions = [1, 2, 3], widths = 0.7)
+set_colour(bp)
+bp = plt.boxplot(B, 0, '', positions = [5, 6, 7], widths = 0.7)
+set_colour(bp)
+bp = plt.boxplot(C, 0, '', positions = [9, 10, 11], widths = 0.7)
+set_colour(bp)
+bp = plt.boxplot(D, 0, '', positions = [13, 14, 15], widths = 0.7)
+set_colour(bp)
+
+ax = plt.axes()
+ax.set_xticks([2, 6, 10, 14])
+ax.set_xticklabels(headers)
+
+plt.show()
