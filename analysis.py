@@ -36,7 +36,7 @@ plt.xlabel(headers[2])
 plt.ylabel(headers[3])
 plt.title('Scatter Plot for Fishers Iris Data set showing petal length and width')
 plt.show()
-#show data correlation
+#show data correlation in a table form
 print(df.corr())
 #show boxplots of data to show the range of data for each of the attributes of all the flowers
 plt.boxplot([df[0], df[1], df[2], df[3]])
