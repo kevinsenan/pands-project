@@ -18,7 +18,7 @@ df.set_axis([0, 1, 2, 3, "Iris"], axis=1,inplace=True)
 # saving the list of correct column names in a list called headers. 
 headers = ["sepal length", "sepal width", "petal length", "petal width"]
 # To get an idea of the data, we use the command describe 
-# to show the statistical information using print.
+# to show the statistical information and using print to display it.
 print(df.describe())
 #I can now plot a histogram of all the values adding labels using the headers list
 plt.hist([df[0], df[1], df[2], df[3]], label=[headers[0], headers[1], headers[2], headers[3]])
@@ -45,11 +45,12 @@ plt.show()
 df.boxplot(column=[0], by=['Iris'])
 plt.show()
 #
+'''
 fig, ax = plt.subplots(2, 2, figsize=(8, 6))
-A = [df[0][df.Iris == 'Iris-setosa'], df[0][df.Iris == 'Iris-virginaca'], df[0][df.Iris == 'Iris-versicolor']]
-B = [df[1][df.Iris == 'Iris-setosa'], df[1][df.Iris == 'Iris-virginaca'], df[1][df.Iris == 'Iris-versicolor']]
-C = [df[2][df.Iris == 'Iris-setosa'], df[2][df.Iris == 'Iris-virginaca'], df[2][df.Iris == 'Iris-versicolor']]
-D = [df[3][df.Iris == 'Iris-setosa'], df[3][df.Iris == 'Iris-virginaca'], df[3][df.Iris == 'Iris-versicolor']]
+A = [df[0][df.Iris == 'Iris-setosa'], df[0][df.Iris == 'Iris-virginica'], df[0][df.Iris == 'Iris-versicolor']]
+B = [df[1][df.Iris == 'Iris-setosa'], df[1][df.Iris == 'Iris-virginica'], df[1][df.Iris == 'Iris-versicolor']]
+C = [df[2][df.Iris == 'Iris-setosa'], df[2][df.Iris == 'Iris-virginica'], df[2][df.Iris == 'Iris-versicolor']]
+D = [df[3][df.Iris == 'Iris-setosa'], df[3][df.Iris == 'Iris-virginica'], df[3][df.Iris == 'Iris-versicolor']]
 ax[0, 0].boxplot(A, widths = 0.7)
 ax[0, 0].set_title(headers[0])
 ax[0, 1].boxplot(B, widths = 0.7)
@@ -59,16 +60,17 @@ ax[1, 0].set_title(headers[2])
 ax[1, 1].boxplot(D, widths = 0.7)
 ax[1, 1].set_title(headers[3])
 plt.show()
+'''
 # trying to show all the boxplots on one graph
 def set_colour(bp):
     plt.setp(bp['boxes'][0], color='blue')
     plt.setp(bp['boxes'][1], color='red')
     plt.setp(bp['boxes'][2], color='green')
 
-A = [df[0][df.Iris == 'Iris-setosa'], df[0][df.Iris == 'Iris-virginaca'], df[0][df.Iris == 'Iris-versicolor']]
-B = [df[1][df.Iris == 'Iris-setosa'], df[1][df.Iris == 'Iris-virginaca'], df[1][df.Iris == 'Iris-versicolor']]
-C = [df[2][df.Iris == 'Iris-setosa'], df[2][df.Iris == 'Iris-virginaca'], df[2][df.Iris == 'Iris-versicolor']]
-D = [df[3][df.Iris == 'Iris-setosa'], df[3][df.Iris == 'Iris-virginaca'], df[3][df.Iris == 'Iris-versicolor']]
+A = [df[0][df.Iris == 'Iris-setosa'], df[0][df.Iris == 'Iris-virginica'], df[0][df.Iris == 'Iris-versicolor']]
+B = [df[1][df.Iris == 'Iris-setosa'], df[1][df.Iris == 'Iris-virginica'], df[1][df.Iris == 'Iris-versicolor']]
+C = [df[2][df.Iris == 'Iris-setosa'], df[2][df.Iris == 'Iris-virginica'], df[2][df.Iris == 'Iris-versicolor']]
+D = [df[3][df.Iris == 'Iris-setosa'], df[3][df.Iris == 'Iris-virginica'], df[3][df.Iris == 'Iris-versicolor']]
 
 bp = plt.boxplot(A, 0, '', positions = [1, 2, 3], widths = 0.7)
 set_colour(bp)
@@ -82,5 +84,8 @@ set_colour(bp)
 ax = plt.axes()
 ax.set_xticks([2, 6, 10, 14])
 ax.set_xticklabels(headers)
-
 plt.show()
+
+filename = "test.txt"
+with open(filename, 'wt') as f:
+    f.write("Kevin is an arse")
