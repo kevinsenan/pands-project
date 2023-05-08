@@ -67,6 +67,7 @@ def set_colour(bp):
     plt.setp(bp['boxes'][1], color='red')
     plt.setp(bp['boxes'][2], color='green')
 
+fig, ax = plt.subplots()
 A = [df[0][df.Iris == 'Iris-setosa'], df[0][df.Iris == 'Iris-virginica'], df[0][df.Iris == 'Iris-versicolor']]
 B = [df[1][df.Iris == 'Iris-setosa'], df[1][df.Iris == 'Iris-virginica'], df[1][df.Iris == 'Iris-versicolor']]
 C = [df[2][df.Iris == 'Iris-setosa'], df[2][df.Iris == 'Iris-virginica'], df[2][df.Iris == 'Iris-versicolor']]
@@ -81,7 +82,7 @@ set_colour(bp)
 bp = plt.boxplot(D, 0, '', positions = [13, 14, 15], widths = 0.7)
 set_colour(bp)
 
-ax = plt.axes()
+#ax = plt.axes()
 ax.set_xticks([2, 6, 10, 14])
 ax.set_xticklabels(headers)
 plt.show()
