@@ -5,7 +5,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-#assigning the name iris.data to the variable filename
+#assigning the name of the data set file iris.data to the variable filename
 Iris_Dataset = 'iris.data'
 # read in the data from the iris.data file as a csv file as that 
 # is how the data is presented. Assign it to a datafile named df. 
@@ -13,7 +13,7 @@ Iris_Dataset = 'iris.data'
 # of data isn't ignored as a header.
 df = pd.read_csv(Iris_Dataset, header=None)
 #As the dataset had no column headers, I have to insert them into the dataset. 
-# I am using 0 to 3 for the numerical columns to make it easier for me.
+# I am using 0 to 3 for the numerical columns to make it easier for me later in the program.
 df.set_axis([0, 1, 2, 3, "Iris"], axis=1,inplace=True)
 # saving the list of correct column names in a list called headers. 
 headers = ["sepal length", "sepal width", "petal length", "petal width"]
@@ -51,10 +51,10 @@ plt.savefig("Boxplot column 0")
 #plt.show()
 # Show all the boxplots on one graph. Define a function called set_colour and pass in the variable bp. 
 # The boxes showing data from column 0 in the list will be coloured blue, column 1 red, column 3 green.
-def set_colour(bp):
-    plt.setp(bp['boxes'][0], color='blue')
-    plt.setp(bp['boxes'][1], color='red')
-    plt.setp(bp['boxes'][2], color='green')
+def set_colour(plot):
+    plt.setp(plot['boxes'][0], color='blue')
+    plt.setp(plot['boxes'][1], color='red')
+    plt.setp(plot['boxes'][2], color='green')
 #To show the plots individually, the data from the four columns are assigned to lists by header name 
 # and then split into flower type
 fig, ax = plt.subplots()
@@ -62,22 +62,24 @@ Sepal_Length = [df[0][df.Iris == 'Iris-setosa'], df[0][df.Iris == 'Iris-virginic
 Sepal_Width = [df[1][df.Iris == 'Iris-setosa'], df[1][df.Iris == 'Iris-virginica'], df[1][df.Iris == 'Iris-versicolor']]
 Petal_Length = [df[2][df.Iris == 'Iris-setosa'], df[2][df.Iris == 'Iris-virginica'], df[2][df.Iris == 'Iris-versicolor']]
 Petal_Width = [df[3][df.Iris == 'Iris-setosa'], df[3][df.Iris == 'Iris-virginica'], df[3][df.Iris == 'Iris-versicolor']]
-#The variable bp is assigned the data for each column, the positions on the x axis are defined by the positions list
+#The variable plot is assigned the data for each column, the positions on the x axis are defined by the positions list
 #and the width of the boxes is defined by the variable widths. 
 # The colour is then defined by the function set_colour.
-bp = plt.boxplot(Sepal_Length, positions = [1, 2, 3], widths = 0.7)
-set_colour(bp)
-bp = plt.boxplot(Sepal_Width, positions = [5, 6, 7], widths = 0.7)
-set_colour(bp)
-bp = plt.boxplot(Petal_Length, positions = [9, 10, 11], widths = 0.7)
-set_colour(bp)
-bp = plt.boxplot(Petal_Width, positions = [13, 14, 15], widths = 0.7)
-set_colour(bp)
-#The labels on the x axis are spaced out as defined by the set_xticks, 
-# with the labels being taken from the headers list.
+plot = plt.boxplot(Sepal_Length, positions = [1, 2, 3], widths = 0.7)
+set_colour(plot)
+plot = plt.boxplot(Sepal_Width, positions = [5, 6, 7], widths = 0.7)
+set_colour(plot)
+plot = plt.boxplot(Petal_Length, positions = [9, 10, 11], widths = 0.7)
+set_colour(plot)
+plot = plt.boxplot(Petal_Width, positions = [13, 14, 15], widths = 0.7)
+set_colour(plot)
+#The labels on the x axis are spaced out as defined by the set_xticks, this is the point on the x axis 
+#the label should be set, with the labels being taken from the headers list.
 ax.set_xticks([2, 6, 10, 14])
 ax.set_xticklabels(headers)
-ax.legend([bp["boxes"][0], bp["boxes"][1],bp["boxes"][2]], ['Iris-setosa', 'Iris-virginica', 'Iris-versicolor'], loc='upper right')
+ax.set_title('Boxplots by Iris')
+#Adding a legend to the plot
+ax.legend([plot["boxes"][0], plot["boxes"][1], plot["boxes"][2]], ['Iris-setosa', 'Iris-virginica', 'Iris-versicolor'], loc='upper right')
 #Save the plot to a file
 plt.savefig("Boxplot comparison")
 #plt.show()
