@@ -38,3 +38,5 @@ Singular grouped by Iris
 Four individual box plot graphs
 
 One big graph with all four on and a legend
+![Boxplot comparison](https://github.com/kevinsenan/pands-project/assets/125194484/b51d653f-2ca9-4246-be20-5f04bc7d85d9)
+
