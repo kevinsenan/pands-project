@@ -51,7 +51,7 @@ plt.savefig("Boxplot column 0")
 #plt.show()
 # Show all the boxplots on one graph. Define a function called set_colour and pass in the variable bp. 
 # The boxes showing data from column 0 in the list will be coloured blue, column 1 red, column 3 green.
-def set_colour(plot):
+def colour(plot):
     plt.setp(plot['boxes'][0], color='blue')
     plt.setp(plot['boxes'][1], color='red')
     plt.setp(plot['boxes'][2], color='green')
@@ -66,13 +66,13 @@ Petal_Width = [df[3][df.Iris == 'Iris-setosa'], df[3][df.Iris == 'Iris-virginica
 #and the width of the boxes is defined by the variable widths. 
 # The colour is then defined by the function set_colour.
 plot = plt.boxplot(Sepal_Length, positions = [1, 2, 3], widths = 0.7)
-set_colour(plot)
+colour(plot)
 plot = plt.boxplot(Sepal_Width, positions = [5, 6, 7], widths = 0.7)
-set_colour(plot)
+colour(plot)
 plot = plt.boxplot(Petal_Length, positions = [9, 10, 11], widths = 0.7)
-set_colour(plot)
+colour(plot)
 plot = plt.boxplot(Petal_Width, positions = [13, 14, 15], widths = 0.7)
-set_colour(plot)
+colour(plot)
 #The labels on the x axis are spaced out as defined by the set_xticks, this is the point on the x axis 
 #the label should be set, with the labels being taken from the headers list.
 ax.set_xticks([2, 6, 10, 14])
