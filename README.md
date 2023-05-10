@@ -9,12 +9,6 @@ This dataset is highly regarded and is used to help users understand concepts in
 0 is sepal length, 1 is sepal width, 2 is petal length, 3 is petal width
 
 Histogram
-The histogram consists of several bar charts grouped together. These bar charts are made up from different data and gives the reader a pictorial representation of the data to show which values occur the most in a set of data.
-A normal spread of data will look like the shape of a bell, hence the name “bell shaped” curve. 
- 
-![image](https://github.com/kevinsenan/pands-project/assets/125194484/9dbfa69f-0e6e-4779-8ff7-a3d32d84a484)
-
-
 
 0 and 1
 
@@ -44,5 +38,5 @@ Singular grouped by Iris
 Four individual box plot graphs
 
 One big graph with all four on and a legend
-![Boxplot comparison](https://github.com/kevinsenan/pands-project/assets/125194484/b51d653f-2ca9-4246-be20-5f04bc7d85d9)
+
 
