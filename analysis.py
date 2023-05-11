@@ -20,27 +20,23 @@ headers = ["sepal length", "sepal width", "petal length", "petal width"]
 # To get an idea of the data, we use the command describe 
 # to show the statistical information and using print to display it.
 print(df.describe())
-#I can now plot a histogram of all the values adding labels using the headers list
-#plt.hist([df[0], df[1], df[2], df[3]], label=[headers[0], headers[1], headers[2], headers[3]])
-#plt.legend()
-#plt.savefig("Histogram")
-#plt.show()
+#plot the histograms of each data set and save them as files
 plt.hist(df[0])
 plt.title('sepal length')
-plt.show()
 plt.savefig("Histogram sepal length")
+plt.show()
 plt.hist(df[1])
 plt.title('sepal width')
-plt.show()
 plt.savefig("Histogram sepal width")
+plt.show()
 plt.hist(df[2])
 plt.title('petal length')
-plt.show()
 plt.savefig("Histogram petal length")
+plt.show()
 plt.hist(df[3])
 plt.title('petal width')
-plt.show()
 plt.savefig("Histogram petal width")
+plt.show()
 #Show all four histograms on one diagram to assist in comparison. 
 fig, ax=plt.subplots(2, 2, figsize=(8, 4))
 ax[0,0].hist(df[0])
@@ -69,14 +65,6 @@ plt.savefig("Scatter Petal")
 #plt.show()
 #show data correlation in a table form
 print(df.corr())
-#show boxplots of data to show the range of data for each of the attributes of all the flowers
-#plt.boxplot([df[0], df[1], df[2], df[3]])
-#plt.savefig("Boxplot all flowers")
-#plt.show()
-#show boxplots of data to show the range of data for each of the attributes of each flower separately
-df.boxplot(column=[0], by=['Iris'])
-plt.savefig("Boxplot column 0")
-#plt.show()
 # Show all the boxplots on one graph. Define a function called set_colour and pass in the variable bp. 
 # The boxes showing data from column 0 in the list will be coloured blue, column 1 red, column 3 green.
 def colour(plot):
