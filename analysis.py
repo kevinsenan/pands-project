@@ -37,7 +37,7 @@ plt.hist(df[3])
 plt.title('petal width')
 plt.savefig("Histogram petal width")
 plt.show()
-#Show all four histograms on one diagram to assist in comparison. 
+#Show all four histograms on one diagram to assist in comparison. I am using the variables fig and ax with the function plt.subplots() because the function returns a tuple containing a figure and axes objects. [7]
 fig, ax=plt.subplots(2, 2, figsize=(8, 4))
 ax[0,0].hist(df[0])
 ax[0,1].hist(df[1])
@@ -63,9 +63,8 @@ plt.ylabel(headers[3])
 plt.title('Scatter Plot for Fishers Iris Data set showing petal length and width')
 plt.savefig("Scatter Petal")
 #plt.show()
-#show data correlation in a table form
-print(df.corr())
-# Show all the boxplots on one graph. Define a function called set_colour and pass in the variable bp. 
+
+# Show all the boxplots on one graph. Define a function called colour and pass in the variable plot. 
 # The boxes showing data from column 0 in the list will be coloured blue, column 1 red, column 3 green.
 def colour(plot):
     plt.setp(plot['boxes'][0], color='blue')
@@ -80,7 +79,7 @@ Petal_Length = [df[2][df.Iris == 'Iris-setosa'], df[2][df.Iris == 'Iris-virginic
 Petal_Width = [df[3][df.Iris == 'Iris-setosa'], df[3][df.Iris == 'Iris-virginica'], df[3][df.Iris == 'Iris-versicolor']]
 #The variable plot is assigned the data for each column, the positions on the x axis are defined by the positions list
 #and the width of the boxes is defined by the variable widths. 
-# The colour is then defined by the function set_colour.
+# The colour is then defined by the function colour.
 plot = plt.boxplot(Sepal_Length, positions = [1, 2, 3], widths = 0.7)
 colour(plot)
 plot = plt.boxplot(Sepal_Width, positions = [5, 6, 7], widths = 0.7)
@@ -98,7 +97,8 @@ ax.set_title('Boxplots by Iris')
 ax.legend([plot["boxes"][0], plot["boxes"][1], plot["boxes"][2]], ['Iris-setosa', 'Iris-virginica', 'Iris-versicolor'], loc='upper right')
 #Save the plot to a file
 plt.savefig("Boxplot comparison")
-#plt.show()
+#show data correlation in a table form
+print(df.corr())
 #Open a file and write the data to it. I had to convert the dataframe back to a string 
 # to write to the file.
 filename = "data.txt"
