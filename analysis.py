@@ -101,6 +101,6 @@ plt.savefig("Boxplot comparison")
 #plt.show()
 #Open a file and write the data to it. I had to convert the dataframe back to a string 
 # to write to the file.
-filename = "test.txt"
+filename = "data.txt"
 with open(filename, 'wt') as f:
     f.write(df.to_string())

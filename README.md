@@ -29,15 +29,10 @@ Virginica and versicolor have a crossover at the higher end but versicolor does 
 
 ![Scatter Petal](https://github.com/kevinsenan/pands-project/assets/125194484/a4d064df-e6f1-4935-a4e4-f79088305c09)
 
-CORRELATION?
-BOXPLOTS
-The spread of the sepal and petal lengths and widths
 
-Grouped by Iris 
-0 is sepal length, top left
-1 is sepal width, top right
-2 is petal length, bottom left shows significant differences and 
-3 is petal width bottom right
+Another form of visual display is the boxplot. In this graph, I can represent the data as a rectangular box with lines extending vertically. The extent of the lines shows the span of the data. In this plot we also see some small circles, these denote the outliers (or data which is outside of the general range of the data). The line horizontally through the rectangular box is the mean value of the data.
+we can see the sepal lengths and widths from the three types of flower are not clearly distinguishable, there is a marked difference between the petal length and width on the Iris-setosa compared to the others.
+In the graph, they are in groups of 3 from left to right. The sepal data is on the left half and the petal data is on the right. It can easily be seen that the sepal data is all in close enough proximity whihc would suggest that the sepals on all three types of flower would not make the flowers easily distinguishable from each other although the Iris-setosa woudl seem to have sepal lengths less than the others. When we look at the petal data, the Iris-setosa is clearly on its own and this would suggest it is easy to distinguish this variety from the other two. If comparing the other two, I could possibly say the Iris-virginica would have bigger petals and the likelihood of identifying that flower against the Iris-versicolor using that as a comparison would make me correct more times than now.
 
 
 ![Alt text](Boxplot%20comparison.png)
