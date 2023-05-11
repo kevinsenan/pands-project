@@ -41,6 +41,18 @@ plt.hist(df[3])
 plt.title('petal width')
 plt.show()
 plt.savefig("Histogram petal width")
+#Show all four histograms on one diagram to assist in comparison. 
+fig, ax=plt.subplots(2, 2, figsize=(8, 4))
+ax[0,0].hist(df[0])
+ax[0,1].hist(df[1])
+ax[1,0].hist(df[2])
+ax[1,1].hist(df[3])
+ax[0,0].set_title(headers[0])
+ax[0,1].set_title(headers[1])
+ax[1,0].set_title(headers[2])
+ax[1,1].set_title(headers[3])
+plt.savefig("Histogram all four")
+plt.show()
 #plot a scatter plots for the sepals and petals
 colour = {'Iris-setosa':'red', 'Iris-virginica':'green', 'Iris-versicolor':'blue'}
 plt.scatter(df[0], df[1], c=df['Iris'].map(colour))
