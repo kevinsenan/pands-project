@@ -16,9 +16,15 @@ A normal spread of data will look like the shape of a bell, hence the name “be
 
 
 4 histograms together on one plot
+In the graph below, we can see a comparison of the data. The Sepal length shows a variance in the distribution whereas the sepal width is skewed to the left showing a distinct differenc ein one set of data. The petal length has a distinct outlier on the left side and while the petal width has some degree of commonality, again, there is a distinct outlier on the left side. This could show that we have a way of distinguishing at least one of the flowers.
 
-Scatter Plot
-0 and 1 Sepal length and wdith by flower
+pands-project\Histogram all four.png
+
+To improve on the comparison, I can use a scatter plot. This will plot each data point on a graph and depending on how close the datapoints are grouped, we can see if there is overlap or any data points that show up as distinct.
+
+In the first Scatter Plot, I am plotting the Sepal Length Iris-setosa is red, Iris-virginica is green and Iris-versicolor is blue. I can see that the Iris-setosa is placed separately to the other plots which shows a distinct difference between the flowers, whereas the other two colours are pretty much mixed together albeit with some differences at either end of the data limits. This would show to me that the sepal length would be a good start to distinguishing the Iris-setosa from the other flowers.
+
+
 Virginica and versicolor have a significant crossover while setosa is distinct
 
 2 and 3 petal length and width by flower
