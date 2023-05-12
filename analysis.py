@@ -1,6 +1,7 @@
 # analysis.py
 # Programming and Scripting Project. To analyse the Fisher's Iris data set using histogram and scatter plots
 # author K Donovan
+# see jupyter notebook for references
 
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -97,7 +98,7 @@ plt.savefig("Boxplot comparison")
 # To get an idea of the data, we use the command describe 
 # to show the statistical information and using print to display it for potential use.
 print(df.describe())
-#show data correlation in a table form for potential use 
+#show data correlation in a table form for potential use in discussion
 print(df.corr())
 #Open a file and write the data to it. I had to convert the dataframe back to a string 
 # to write to the file.
