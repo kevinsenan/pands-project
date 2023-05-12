@@ -95,13 +95,16 @@ ax.set_title('Boxplots by Iris')
 ax.legend([plot["boxes"][0], plot["boxes"][1], plot["boxes"][2]], ['Iris-setosa', 'Iris-virginica', 'Iris-versicolor'], loc='upper right')
 #Save the plot to a file
 plt.savefig("Boxplot comparison")
-# To get an idea of the data, we use the command describe 
-# to show the statistical information and using print to display it for potential use.
-print(df.describe())
 #show data correlation in a table form for potential use in discussion
 print(df.corr())
-#Open a file and write the data to it. I had to convert the dataframe back to a string 
+#Open a file and write the original data to it. I had to convert the dataframe back to a string 
 # to write to the file.
 filename = "data.txt"
 with open(filename, 'wt') as f:
     f.write(df.to_string())
+# to show the statistical information and saving the data to a variable called summary.
+summary = (df.describe())
+# write the summary information to a text file, convert from df to string
+filename = "summaryfile.txt"
+with open(filename, 'wt') as f:
+    f.write(summary.to_string())
