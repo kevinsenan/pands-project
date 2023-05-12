@@ -37,6 +37,8 @@ In the graph, they are in groups of 3 from left to right. The sepal data is on t
 
 ![Alt text](Boxplot%20comparison.png)
 
+NOTE
+To run the program, open a command (cmd) window on your pc, type cd (to change directory but do not press enter) go to the folder it is saved in, drag and drop the folder into the cmd window where you typed cd, it should populate the directory structure automatically, now hit enter to change to the directory. Then type python analysis.py to run the program.
 
 REFERENCES:
 [1] https://www.geeksforgeeks.org/data-analysis-tutorial/

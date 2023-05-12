@@ -17,9 +17,6 @@ df = pd.read_csv(Iris_Dataset, header=None)
 df.set_axis([0, 1, 2, 3, "Iris"], axis=1,inplace=True)
 # saving the list of correct column names in a list called headers. 
 headers = ["sepal length", "sepal width", "petal length", "petal width"]
-# To get an idea of the data, we use the command describe 
-# to show the statistical information and using print to display it.
-print(df.describe())
 #plot the histograms of each data set and save them as files
 plt.hist(df[0])
 plt.title('sepal length')
@@ -97,7 +94,10 @@ ax.set_title('Boxplots by Iris')
 ax.legend([plot["boxes"][0], plot["boxes"][1], plot["boxes"][2]], ['Iris-setosa', 'Iris-virginica', 'Iris-versicolor'], loc='upper right')
 #Save the plot to a file
 plt.savefig("Boxplot comparison")
-#show data correlation in a table form
+# To get an idea of the data, we use the command describe 
+# to show the statistical information and using print to display it for potential use.
+print(df.describe())
+#show data correlation in a table form for potential use 
 print(df.corr())
 #Open a file and write the data to it. I had to convert the dataframe back to a string 
 # to write to the file.
